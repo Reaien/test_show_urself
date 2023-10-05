@@ -1,0 +1,7 @@
+{
+  "name": "show_urself",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,168 @@
+/*webkit animation de animacion de titulo*/
+
+@-webkit-keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+/*webkiit animation del logo*/
+@-webkit-keyframes puff-in-center {
+    0% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes puff-in-center {
+    0% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+  
+
+ion-content{
+    --ion-background-color: url(/assets/img/bg-login.gif) no-repeat center center / cover;
+    
+}
+
+.glass-content {
+/* From https://css.glass */
+    background: rgba(44, 44, 44, 0.548);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.432);
+    backdrop-filter: blur(2.1px);
+    -webkit-backdrop-filter: blur(15.1px);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.logo{
+  max-width: 50%;
+  opacity: 95%;
+  margin-top: 5%;
+}
+
+.titulo{
+    color: #ec6635;
+    font-size: 3.9rem;
+    font-weight: bolder;
+}
+
+.boton-login{
+    --ion-color-warning-contrast: white;
+    --ion-color-warning: #ec6635;
+    width: 80%;
+    height: 3.2rem;
+    margin-top: 20%;
+    border-radius: 5rem;
+    font-weight: bolder;
+
+}
+@media (max-width: 376px){
+    .boton-login{
+        margin-top: 25%;
+    }
+}
+
+.boton-registrate{
+  --ion-color-warning-contrast: white;
+  --ion-color-warning: #ec6635;
+  width: 80%;
+  height: 3.2rem;
+  margin-top: 3%;
+  border-radius: 5rem;
+  font-weight: bolder;  
+}
+@media (max-width: 376px){
+    .boton-registrate{
+        margin-top: 3%;
+    }
+}
+
+
+.slide-in-left {
+	-webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.puff-in-center {
+	-webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+
+.pulsate-fwd {
+	-webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
+	        animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

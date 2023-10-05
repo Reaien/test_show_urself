@@ -1,0 +1,72 @@
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-chip class="box chipiChip">
+          <ion-avatar class="avatar">
+            <img
+              alt="user-avatar"
+              src="https://i.pinimg.com/564x/58/14/31/58143128ab1a8ff18806bd193c3beec3.jpg"
+            />
+          </ion-avatar>
+          <ion-label class="fuente-bienvenido">Bienvenido {{ data.usuario }}</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col>
+        <ion-chip class="chipiChip2">
+          <ion-label class="fuente-bienvenido">Música y artistas</ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1 class="slider-videos-tittle">Videos más votados</h1>
+
+        <p class="slider-videos-subtittle">
+          Mira los videos más votados por los usuarios
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- me volvi loco, iteración con condicional de array creado en el TS del page home para alojar imagenes-->
+  <div class="swiper-container" *ngIf="slides.length > 0">
+    <swiper-container
+      [modules]="swiperModules"
+      [slidesPerView]="1.2"
+      [initialSlide]="0"
+      [centeredSlides]="true"
+      [spaceBetween]="15"
+    >
+      <swiper-slide *ngFor="let slide of slides">
+        <img class="slide-image" [src]="slide?.banner" />
+      </swiper-slide>
+    </swiper-container>
+  </div>
+  <br />
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1 class="slider-videos-tittle">Explora</h1>
+        <p class="slider-videos-subtittle">Categorías por género musical</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="swiper-genre-container" *ngIf="genreSlides.length > 0">
+    <swiper-container
+      [modules]="swiperModules"
+      [slidesPerView]="2"
+      [initialSlide]="0"
+      [centeredSlides]="false"
+      [spaceBetween]="4">
+      <swiper-slide *ngFor="let genreSlide of genreSlides">
+        <img class="slide-genre-image" [src]="genreSlide?.genre" />
+      </swiper-slide>
+    </swiper-container>
+  </div>
+

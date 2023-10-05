@@ -8,6 +8,9 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HomePage } from './home.page';
 
+import { ComphomeComponent } from 'src/app/components/comphome/comphome.component'
+import { CompuserComponent } from 'src/app/components/compuser/compuser.component'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,6 +19,6 @@ import { HomePage } from './home.page';
     HomePageRoutingModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [HomePage]
+  declarations: [HomePage, ComphomeComponent, CompuserComponent]
 })
 export class HomePageModule {}

@@ -85,6 +85,34 @@ export class DbserviceService {
   //fin obtener select * from generos y almacenarlo en lista para cargarlo en crearTabla
 
 
+  //función para hacer insert en tabla generos
+  async addGenero(nombre: any){
+    let data = [nombre];
+    await this.database.executeSql('INSERT INTO genero(nombre) VALUES(?)', data)
+    this.cargarGeneros();
+  }
+  //fin insert genero
+
+  //función update genero
+  async updateGenero(id: any, nombre: any){
+    let data = [nombre, id];
+    await this.database.executeSql('UPDATE genero SET nombre=? WHERE id=?', data);
+    this.cargarGeneros();
+  }
+  //fin update genero
+
+
+  //función para borrar genero
+  async deleteGenero(id: any){
+    await this.database.executeSql('DELETE FROM genero WHERE id=?', [id]);
+    this.cargarGeneros();
+  }
+  //funcion para borrar genero
+
+
+
+
+
   //obtener select * from en una lista y luego pasarla al crearTablas para tener la info a disposición
   cargarUsuarios(){
     let itemUsuario: Usuario[] = [];
@@ -102,11 +130,34 @@ export class DbserviceService {
     });
     this.listaUsuarios.next(itemUsuario);
   }
-  //fin obtener select * from generos y almacenarlo en lista para cargarlo en crearTabla
+  //fin obtener select * from usuario y almacenarlo en lista para cargarlo en crearTabla
 
 
+  //función para hacer insert en tabla usuario
+  async addUsuario(user: any, password: any, email: any){
+    let data = [user, password, email];
+    await this.database.executeSql('INSERT INTO usuario(user, password, email) VALUES(?,?,?)', data)
+    this.cargarUsuarios();
+  }
+  //fin insert usuario
 
-      //obtener select * from en una lista y luego pasarla al crearTablas para tener la info a disposición
+  //función update usuario
+  async updateUsuario(id: any, user: any, password: any, email: any){
+    let data = [user, password, email, id];
+    await this.database.executeSql('UPDATE usuario SET user=?, password=?, email=?, WHERE id=?', data);
+    this.cargarUsuarios();
+  }
+  //fin update usuario
+
+  //función para borrar usuario
+  async deleteUsuario(id: any){
+    await this.database.executeSql('DELETE FROM usuario WHERE id=?', [id]);
+    this.cargarUsuarios();
+  }
+  //funcion para borrar usuario
+
+
+  //obtener select * from en una lista y luego pasarla al crearTablas para tener la info a disposición
   cargarVideos(){
     let itemVideo: Video[] = [];
     this.database.executeSql('SELECT * FROM video', []).then(res => {
@@ -122,10 +173,31 @@ export class DbserviceService {
     });
     this.listaVideos.next(itemVideo);
   }
-  //fin obtener select * from generos y almacenarlo en lista para cargarlo en crearTabla
+  //fin obtener select * from video y almacenarlo en lista para cargarlo en crearTabla
+
+  //función para hacer insert en tabla video
+  async addVideo(nombre: any, observacion: any){
+    let data = [nombre, observacion];
+    await this.database.executeSql('INSERT INTO video(nombre, observacion) VALUES(?,?)', data)
+    this.cargarVideos();
+  }
+  //fin insert video
 
 
-  //proximamente add update y delete para las tablas//
+  //función update video
+  async updateVideo(id: any, nombre: any, observacion: any){
+    let data = [nombre, observacion, id];
+    await this.database.executeSql('UPDATE video SET nombre=?, observacion=?, WHERE id=?', data);
+    this.cargarVideos();
+  }
+  //fin update video
+
+  //función para borrar usuario
+  async deleteVideo(id: any){
+    await this.database.executeSql('DELETE FROM video WHERE id=?', [id]);
+    this.cargarVideos();
+  }
+  //funcion para borrar usuario  
 
 
   //verifica la suscripcion del observable

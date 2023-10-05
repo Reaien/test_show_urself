@@ -23,7 +23,7 @@ export class SplashPage implements OnInit {
           }
         }
         setTimeout(() => {
-          this.router.navigate(['/home'],navigationExtras);
+          this.router.navigate(['/home/main'],navigationExtras);
         }, 4000);
       }else{
         this.router.navigate(["/inicio"]);

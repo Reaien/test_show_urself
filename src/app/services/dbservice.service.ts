@@ -59,7 +59,7 @@ export class DbserviceService {
       //crear tabla video y traer datos en lista generos por cargarGenero() para ser utilizada
       await this.database.executeSql(this.tblGeneros, []);
       this.presentToast("Tabla Videos Creada");
-      this.cargarVideos();      
+      this.cargarVideos();
       this.isDbReady.next(true);
     } catch (error) {
       this.presentToast("Error en crear tabla: " + error);

@@ -1,6 +1,5 @@
 
-  <ion-grid>
-    <ion-row>
+    <ion-row >
       <ion-col>
         <ion-chip class="box chipiChip">
           <ion-avatar class="avatar">
@@ -18,9 +17,8 @@
         </ion-chip>
       </ion-col>
     </ion-row>
-  </ion-grid>
 
-  <ion-grid>
+
     <ion-row>
       <ion-col>
         <h1 class="slider-videos-tittle">Videos más votados</h1>
@@ -30,7 +28,7 @@
         </p>
       </ion-col>
     </ion-row>
-  </ion-grid>
+
 
   <!-- me volvi loco, iteración con condicional de array creado en el TS del page home para alojar imagenes-->
   <div class="swiper-container" *ngIf="slides.length > 0">
@@ -39,23 +37,20 @@
       [slidesPerView]="1.2"
       [initialSlide]="0"
       [centeredSlides]="true"
-      [spaceBetween]="15"
-    >
+      [spaceBetween]="15">
       <swiper-slide *ngFor="let slide of slides">
         <img class="slide-image" [src]="slide?.banner" />
       </swiper-slide>
     </swiper-container>
   </div>
-  <br />
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h1 class="slider-videos-tittle">Explora</h1>
-        <p class="slider-videos-subtittle">Categorías por género musical</p>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
+  <ion-row>
+    <ion-col>
+      <h1 class="slider-videos-tittle">Explora</h1>
+      <p class="slider-videos-subtittle">Categorías por género musical</p>
+    </ion-col>
+  </ion-row>
 
   <div class="swiper-genre-container" *ngIf="genreSlides.length > 0">
     <swiper-container

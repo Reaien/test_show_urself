@@ -30,8 +30,8 @@ h1, h2, h3, p, button{
 }
 
 .slide-image{
-  height: 12rem;
-  border-radius: 20px; 
+  height: 14rem;
+  border-radius: 15px; 
 }
 
 .slider-videos-tittle{
@@ -43,9 +43,15 @@ h1, h2, h3, p, button{
   color: #ec6635;
 }
 
+.swiper-genre-container{
+  margin-bottom: 2rem;
+}
+
 ion-icon {
   --ionicon-stroke-width: 32px;
 }
+
+
 
 /*box de form*/
 .box {
@@ -72,7 +78,7 @@ ion-icon {
       }
     }
   
-  }
+}
   
   @property --border-angle {
     syntax: "<angle>";

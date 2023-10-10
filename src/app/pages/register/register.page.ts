@@ -40,6 +40,7 @@ export class RegisterPage implements OnInit {
       await alert.present();  
       return;    
     }else{
+      console.log(formulario.nombre, formulario.password, formulario.email)
       const alert = await this.alertController.create({
         header: 'Usuario Registrado',
         buttons: ['Redirigiendo al inicio'],
